@@ -24,6 +24,18 @@ var hwangRunningSum = function (nums) {
  * @param {number[]} nums
  * @return {number[]}
  */
-const parkRunningSum = nums => {
-  return nums.map((num, index, nums) => nums.filter((_num, _index) => index >= _index).reduce((acc, cur) => acc + cur));
+const parkRunningSum = (nums) => {
+  return nums.map((num, index, nums) =>
+    nums
+      .filter((_num, _index) => index >= _index)
+      .reduce((acc, cur) => acc + cur)
+  );
 };
+
+//* 최원오 시작 ----------------------------------------------------------------------------------------------------------------------------------
+const choiRunningSum = function (nums) {
+  return nums.map((num, i) =>
+    nums.slice(0, i + 1).reduce((acc, cur) => acc + cur, 0)
+  );
+};
+//* 최원오 끝 ----------------------------------------------------------------------------------------------------------------------------------
