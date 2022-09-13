@@ -39,3 +39,15 @@ const choiRunningSum = function (nums) {
   );
 };
 //* 최원오 끝 ----------------------------------------------------------------------------------------------------------------------------------
+
+var kimRunningSum = function (nums) {
+  let arr = [];
+  let sum = 0;
+  // let result = nums.reduce((a, b) => arr.push(a + b));
+  for (let i = 0; i < nums.length; i++) {
+    sum += nums[i];
+    arr.push(sum);
+  }
+
+  return arr;
+};
