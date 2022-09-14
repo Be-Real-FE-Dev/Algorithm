@@ -10,14 +10,12 @@ const jeongRunningSum = function (nums) {
 };
 
 // doeun solution
-const hwangRunningSum = function (nums) {
-  return nums.map(
-    (num, i) =>
-      num +
-      nums.reduce((acc, cur, idx) => {
-        if (idx < i) return acc + cur;
-        return acc;
-      }, 0)
+var hwangRunningSum = function (nums) {
+  return nums.map((_, i) =>
+    nums.reduce((acc, cur, idx) => {
+      if (idx <= i) return acc + cur;
+      else return acc;
+    }, 0)
   );
 };
 
@@ -29,9 +27,12 @@ console.log(hwangRunningSum([1, 2, 3, 4]));
 const parkRunningSum = nums =>
   nums.map((num, index, nums) => nums.filter((_num, _index) => index >= _index).reduce((acc, cur) => acc + cur));
 
+
 //* 최원오 시작 ----------------------------------------------------------------------------------------------------------------------------------
 const choiRunningSum = function (nums) {
-  return nums.map((num, i) => nums.slice(0, i + 1).reduce((acc, cur) => acc + cur, 0));
+  return nums.map((num, i) =>
+    nums.slice(0, i + 1).reduce((acc, cur) => acc + cur, 0)
+  );
 };
 //* 최원오 끝 ----------------------------------------------------------------------------------------------------------------------------------
 

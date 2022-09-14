@@ -4,17 +4,6 @@
  * @return {number}
  */
 const parkMaxSubArray = nums => {
-  // ! Time Limit Exceeded
-  // let max = Math.max(...nums);
-  // for (let i = 0; i < nums.length; i++) {
-  //   for (let j = 1; j <= nums.length; j++) {
-  //     const subArray = nums.slice(i, j);
-  //     if (!subArray.length) continue;
-  //     const subArraySum = subArray.reduce((acc, cur) => acc + cur, 0);
-  //     max = subArraySum > max ? subArraySum : max;
-  //   }
-  // }
-  // return max;
   let max = -Infinity;
   let localSum = 0;
 
@@ -23,4 +12,17 @@ const parkMaxSubArray = nums => {
     max = Math.max(localSum, max);
   });
   return max;
+}
+
+// doeun ------------------------------------------------------------------------------------------------------------------//
+const hwangMaxSubArray = function (nums) {
+  const dp = [];
+
+  dp[0] = nums[0];
+
+  for (let i = 1; i < nums.length; i++) {
+    dp[i] = nums[i] + (dp[i - 1] < 0 ? 0 : dp[i - 1]);
+  }
+
+  return Math.max(...dp);
 };

@@ -9,19 +9,6 @@ const jeongRunningSum = function (nums) {
   return resultArr;
 };
 
-// doeun solution
-const hwangRunningSum = function (nums) {
-  return nums.map(
-    (num, i) =>
-      num +
-      nums.reduce((acc, cur, idx) => {
-        if (idx < i) return acc + cur;
-        return acc;
-      }, 0)
-  );
-};
-
-console.log(hwangRunningSum([1, 2, 3, 4]));
 /**
  * @param {number[]} nums
  * @return {number[]}
@@ -46,3 +33,15 @@ const kimRunningSum = function (nums) {
 
   return arr;
 };
+
+// doeun ------------------------------------------------------------------------------------------------------------------//
+const hwangRunningSum = function (nums) {
+  return nums.map((_, i) =>
+    nums.reduce((acc, cur, idx) => {
+      if (idx <= i) return acc + cur;
+      else return acc;
+    }, 0)
+  );
+};
+
+console.log(hwangRunningSum([1, 2, 3, 4]));
