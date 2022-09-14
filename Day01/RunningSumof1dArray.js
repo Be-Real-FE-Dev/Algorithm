@@ -2,10 +2,7 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-const parkRunningSum = (nums) => {
-  return nums.map((num, index, nums) =>
-    nums
-      .filter((_num, _index) => index >= _index)
-      .reduce((acc, cur) => acc + cur)
-  );
+const leeRunningSum = nums => {
+  let sum = 0;
+  return (answer = nums.map(num => (sum += num)));
 };
