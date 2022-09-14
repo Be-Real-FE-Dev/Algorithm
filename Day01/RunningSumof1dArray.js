@@ -1,3 +1,5 @@
+
+// ******************************************************* 세훈
 const jeongRunningSum = function (nums) {
   const resultArr = [];
 
@@ -8,6 +10,8 @@ const jeongRunningSum = function (nums) {
 
   return resultArr;
 };
+// ***********************************************************
+
 
 /**
  * @param {number[]} nums
