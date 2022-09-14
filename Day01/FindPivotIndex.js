@@ -16,9 +16,3 @@ const kimPivotIndex = (nums) => {
 };
 
 console.log(pivotIndex([1, 2, 3]));
-
-var kimContainsDuplicate = function (nums) {
-  let duplication = new Set(nums);
-
-  return nums.length === duplication.size ? false : true;
-};
