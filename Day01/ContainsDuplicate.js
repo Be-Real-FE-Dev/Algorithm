@@ -1,3 +1,11 @@
+
+//Dabin's solution
+var kimContainsDuplicate = function (nums) {
+  let duplication = new Set(nums);
+
+  return nums.length === duplication.size ? false : true;
+};
+
 // ******************************************************* 세훈
 const jeongContainsDuplicate = function (nums) {
   for (let i = 0; i < nums.length - 1; i++) {
@@ -33,4 +41,5 @@ const parkContainsDuplicate = nums => {
 const hwangContainsDuplicate = function (nums) {
   return nums.length !== [...new Set(nums)].length;
 };
+
 
