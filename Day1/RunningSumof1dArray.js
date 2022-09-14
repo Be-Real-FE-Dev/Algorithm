@@ -27,12 +27,18 @@ console.log(hwangRunningSum([1, 2, 3, 4]));
  * @return {number[]}
  */
 const parkRunningSum = nums => {
-  return nums.map((num, index, nums) => nums.filter((_num, _index) => index >= _index).reduce((acc, cur) => acc + cur));
+  return nums.map((num, index, nums) =>
+    nums
+      .filter((_num, _index) => index >= _index)
+      .reduce((acc, cur) => acc + cur)
+  );
 };
 
 //* 최원오 시작 ----------------------------------------------------------------------------------------------------------------------------------
 const choiRunningSum = function (nums) {
-  return nums.map((num, i) => nums.slice(0, i + 1).reduce((acc, cur) => acc + cur, 0));
+  return nums.map((num, i) =>
+    nums.slice(0, i + 1).reduce((acc, cur) => acc + cur, 0)
+  );
 };
 //* 최원오 끝 ----------------------------------------------------------------------------------------------------------------------------------
 
@@ -46,4 +52,9 @@ var kimRunningSum = function (nums) {
   }
 
   return arr;
+};
+
+var leeRunningSum = function (nums) {
+  let sum = 0;
+  return (answer = nums.map(num => (sum += num)));
 };
