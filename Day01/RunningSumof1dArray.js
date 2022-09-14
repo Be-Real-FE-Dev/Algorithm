@@ -46,3 +46,13 @@ const kimRunningSum = function (nums) {
 
   return arr;
 };
+
+// doeun ------------------------------------------------------------------------------------------------------------------//
+const hwangRunningSum = function (nums) {
+  return nums.map((_, i) =>
+    nums.reduce((acc, cur, idx) => {
+      if (idx <= i) return acc + cur;
+      else return acc;
+    }, 0)
+  );
+};
