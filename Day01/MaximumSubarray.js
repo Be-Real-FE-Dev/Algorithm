@@ -16,3 +16,61 @@ const jeongMaxSubArray = function (nums) {
 };
 // console.log(jeongMaxSubArray([1, 2, 3, 1]));
 // ***********************************************************
+
+//* 최원오 시작 ( 타임오버 ) ----------------------------------------------------------------------------------------------------------------------------------
+
+const choiSubArrayFail = function (nums) {
+  let max = Number.MIN_SAFE_INTEGER;
+
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i; j < nums.length; j++) {
+      const sum = nums.slice(i, j + 1).reduce((acc, cur) => acc + cur, 0);
+
+      max = Math.max(max, sum);
+    }
+  }
+
+  return max;
+};
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+const choiSubArray = function (nums) {
+  for (let i = 1; i < nums.length; i++) {
+    nums[i] = Math.max(nums[i], nums[i] + nums[i - 1]);
+  }
+
+  return Math.max(...nums);
+};
+
+//* 최원오 끝 ----------------------------------------------------------------------------------------------------------------------------------
+
+/**
+ * * Park's Code
+ * @param {number[]} nums
+ * @return {number}
+ */
+const parkMaxSubArray = nums => {
+  let max = -Infinity;
+  let localSum = 0;
+
+  nums.forEach(num => {
+    localSum = Math.max(num, localSum + num);
+    max = Math.max(localSum, max);
+  });
+  return max;
+}
+
+// doeun ------------------------------------------------------------------------------------------------------------------//
+const hwangMaxSubArray = function (nums) {
+  const dp = [];
+
+  dp[0] = nums[0];
+
+  for (let i = 1; i < nums.length; i++) {
+    dp[i] = nums[i] + (dp[i - 1] < 0 ? 0 : dp[i - 1]);
+  }
+
+  return Math.max(...dp);
+};
+
