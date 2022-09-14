@@ -1,4 +1,25 @@
 
+//* 최원오 시작 ----------------------------------------------------------------------------------------------------------------------------------
+
+const choiPivotIndex = function (nums) {
+  let result = -1;
+
+  for (let i = 0; i < nums.length; i++) {
+    const leftSum = nums.slice(0, i).reduce((acc, cur) => acc + cur, 0);
+    const rightSum = nums.slice(i + 1).reduce((acc, cur) => acc + cur, 0);
+
+    if (leftSum === rightSum) {
+      result = i;
+      break;
+    }
+  }
+
+  return result;
+};
+
+//* 최원오 끝 ----------------------------------------------------------------------------------------------------------------------------------
+
+
 /**
  * * Park's Code
  * @param {number[]} nums
@@ -17,6 +38,7 @@ const parkPivotIndex = nums => {
   }
   return res >= 0 ? res : -1;
 }
+
 // doeun ------------------------------------------------------------------------------------------------------------------//
 const hwangPivotIndex = function (nums) {
   for (let i = 0; i < nums.length; i++) {
@@ -32,3 +54,4 @@ const hwangPivotIndex = function (nums) {
 
   return -1;
 };
+
