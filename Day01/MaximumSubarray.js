@@ -1,3 +1,19 @@
+/**
+ * * Park's Code
+ * @param {number[]} nums
+ * @return {number}
+ */
+const parkMaxSubArray = nums => {
+  let max = -Infinity;
+  let localSum = 0;
+
+  nums.forEach(num => {
+    localSum = Math.max(num, localSum + num);
+    max = Math.max(localSum, max);
+  });
+  return max;
+}
+
 // doeun ------------------------------------------------------------------------------------------------------------------//
 const hwangMaxSubArray = function (nums) {
   const dp = [];
