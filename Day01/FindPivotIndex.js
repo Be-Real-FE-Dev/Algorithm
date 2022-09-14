@@ -1,5 +1,5 @@
 //Dabin's try
-const pivotIndex = (nums) => {
+const kimPivotIndex = (nums) => {
   let answer = 0;
   let left = 0;
   let sum = nums.reduce((a, b) => a + b, 0);
