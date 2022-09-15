@@ -1,3 +1,5 @@
+
+// ******************************************************* 세훈
 const jeongRunningSum = function (nums) {
   const resultArr = [];
 
@@ -8,6 +10,8 @@ const jeongRunningSum = function (nums) {
 
   return resultArr;
 };
+// ***********************************************************
+
 
 /**
  * @param {number[]} nums
@@ -45,3 +49,9 @@ const hwangRunningSum = function (nums) {
 };
 
 console.log(hwangRunningSum([1, 2, 3, 4]));
+
+// joeun
+const leeRunningSum = function(nums) {
+  let sum = 0;
+  return nums.map(num => (sum += num));
+};
