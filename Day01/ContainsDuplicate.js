@@ -42,4 +42,10 @@ const hwangContainsDuplicate = function (nums) {
   return nums.length !== [...new Set(nums)].length;
 };
 
+// joeun
+const leeContainsDuplicate = function(nums) {
+  const set = new Set(nums)
+  return set.size !== nums.length;
+};
+
 
