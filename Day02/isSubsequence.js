@@ -104,3 +104,12 @@ const sortArr = [...arr].sort((a,b)=> a>b)
 
 // -----------------------------------------
 
+// joeun
+const leeIsSubsequence = function(s, t) {
+  let pos = -1;
+  for (let i = 0; i < s.length; i++) {
+      pos = t.indexOf(s[i], pos + 1); 
+      if (pos === -1) return false;
+  }
+  return true;
+};
