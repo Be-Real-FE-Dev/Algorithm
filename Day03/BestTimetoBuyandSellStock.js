@@ -46,3 +46,19 @@ const parkMaxProfit = prices => {
   return maxIncome;
 };
 
+// *joeun*
+const leeMaxProfit = function(prices) {
+  let min = prices[0];
+  let maxProfit = [];
+  
+  for (let i = 1; i < prices.length; i++) {
+      if (min > prices[i]) {
+          min = prices[i];
+      } else {
+          maxProfit.push(prices[i] - min)
+      }
+  }
+  
+  maxProfit.sort((a,b) => b - a)
+  return maxProfit.length === 0 ? 0 : maxProfit[0]
+};
