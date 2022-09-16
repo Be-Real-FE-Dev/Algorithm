@@ -1,3 +1,21 @@
+
+// * doeun --------------------------------------------------------------------------------------------------------------------//
+const hwangMaxProfit = function(prices) {
+  let res = 0;
+  let buy = Number.MAX_SAFE_INTEGER;
+  
+  for(let i = 0; i < prices.length; i++){
+      if(buy > prices[i]){
+          buy = prices[i]
+          continue;
+      };
+      
+      res = Math.max(res, prices[i] - buy)
+  }
+  
+  return res
+};
+
 // ******************************************************* 세훈
 
 const jeongMaxProfit = function(prices) {
@@ -62,3 +80,4 @@ const leeMaxProfit = function(prices) {
   maxProfit.sort((a,b) => b - a)
   return maxProfit.length === 0 ? 0 : maxProfit[0]
 };
+
