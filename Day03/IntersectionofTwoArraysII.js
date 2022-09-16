@@ -54,3 +54,22 @@ const parkIntersect = (nums1, nums2) => {
   return result;
 };
 
+// *joeun
+const intersect = function(nums1, nums2) {
+  let result = [];
+  let idx = 0;
+  
+  const findIntersect = function(arr1,arr2) {
+      for (let i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) !== -1) {
+              idx = arr1.indexOf(arr2[i])
+              result.push(arr2[i]);
+              arr1.splice(idx,1);
+          } 
+      }
+  }
+  
+  nums1.length > nums2.length ? findIntersect(nums1,nums2) : findIntersect(nums2,nums1)
+  
+  return result;
+};
