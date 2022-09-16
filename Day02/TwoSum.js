@@ -82,3 +82,34 @@ const hwangTwoSum = function(nums, target) {
   }
 };
 
+
+//* 세훈  ------------------------------
+
+const jeongTwoSum = function(nums, target) {
+for(let i = 0; i < nums.length; i++) {
+if(nums.indexOf(target-nums[i],i+1) !== -1) return [i,nums.indexOf(target-nums[i],i+1)]
+}
+};
+
+
+//* -------------------------------
+
+// joeun
+const leeTwoSum = function(nums, target) {
+  let restInt = 0;
+  let pairIdx = 0;
+  let resultArr = [];
+  
+  for (let i = 0; i < nums.length; i++) {
+      restInt = target - nums[i];
+      resultArr.push(i);
+      
+      if (nums.indexOf(restInt, i+1) !== -1) {
+          pairIdx = nums.indexOf(restInt, i+1)
+          resultArr.push(pairIdx)
+          return resultArr;
+      } else {
+          resultArr = [];
+      }
+  }
+};

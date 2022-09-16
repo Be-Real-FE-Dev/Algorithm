@@ -74,3 +74,42 @@ const hwangIsSubsequence = function(s, t) {
   return true;  
 };
 
+
+// 세훈  --------------------------------
+
+const jeongIsSubsequence = function(s, t) {
+  let result = true
+let index = 0
+let arr = []
+  s = [...s]
+  t = [...t]
+
+  s.map(s => {
+    const indexNum = t.indexOf(s,index)
+    if(indexNum === -1) {
+  result = false
+  return
+  }
+  if(indexNum !== -1) {
+    index = indexNum + 1
+    }
+    arr.push(indexNum)
+})
+const sortArr = [...arr].sort((a,b)=> a>b)
+
+    if(arr.join(',')!== sortArr.join(',')) result = false
+
+    return result
+};
+
+// -----------------------------------------
+
+// joeun
+const leeIsSubsequence = function(s, t) {
+  let pos = -1;
+  for (let i = 0; i < s.length; i++) {
+      pos = t.indexOf(s[i], pos + 1); 
+      if (pos === -1) return false;
+  }
+  return true;
+};

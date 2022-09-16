@@ -16,35 +16,6 @@ var merge = function(nums1, m, nums2, n) {
 //End of Dabin-------------------------------------------------------------------------------------------------
 
 
-// 세훈  --------------------------------
-
-const jeongIsSubsequence = function(s, t) {
-  let result = true
-let index = 0
-let arr = []
-  s = [...s]
-  t = [...t]
-
-  s.map(s => {
-    const indexNum = t.indexOf(s,index)
-    if(indexNum === -1) {
-  result = false
-  return
-  }
-  if(indexNum !== -1) {
-    index = indexNum + 1
-    }
-    arr.push(indexNum)
-})
-const sortArr = [...arr].sort((a,b)=> a>b)
-
-    if(arr.join(',')!== sortArr.join(',')) result = false
-
-    return result
-};
-
-// -----------------------------------------
-
 /**
  * * ************************* Park's Code *************************
  * @param {number[]} nums1
@@ -78,3 +49,26 @@ const hwangMerge = function(nums1, m, nums2, n) {
   nums1.sort((a, b) => a - b)
 
 };
+
+
+//* 세훈  ------------------------------
+
+const jeongMerge = function(nums1, m, nums2, n) {
+let nums2Idx = 0
+
+for(let i= m; i < nums1.length; i++){
+if(nums1[i] === 0){
+nums1[i] = nums2[nums2Idx++]
+}
+}
+return nums1.sort((a,b) => a - b)
+  };
+  
+  
+  //* -------------------------------
+
+  // joeun
+  const leeMerge = function(nums1, m, nums2, n) {
+    nums1.splice(m,n,...nums2)
+    nums1.sort((a,b) => a - b)    
+  };
