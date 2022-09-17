@@ -42,3 +42,33 @@ const choiMatrixReshape = function(mat, r, c) {
     
     return result;
 };
+
+// * doeun --------------------------------------------------------------------------------------------------------------------//
+const hwangMatrixReshape = function(mat, r, c) {
+  if(mat.length * mat[0].length !== r * c) return mat;
+  
+  const matrixReshape = []
+  
+  for(let i = 0; i < r; i++){
+      matrixReshape.push(new Array(c).fill(0))
+  }
+  
+  let x = 0;
+  let y = 0;
+  
+  for(let i = 0; i < mat.length; i++){
+      for(let j = 0; j < mat[i].length; j++){
+          if(matrixReshape[y][x] === 0){
+              matrixReshape[y][x] = mat[i][j];
+              x += 1;
+              
+              if(x === c){
+                  y += 1;
+                  x = 0;
+              }
+          }
+      }    
+  }
+  
+  return matrixReshape
+};
