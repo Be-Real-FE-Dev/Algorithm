@@ -57,3 +57,23 @@ const choiMiddleNode = function(head) {
     count += 1;
   }
 };
+
+// * doeun --------------------------------------------------------------------------------------------------------------------//
+const hwangMiddleNode = function(head) {
+  let length = 0;
+  let list = head;
+  
+  while(list){
+      length += 1;
+      list = list.next
+  }
+  
+  list = head;
+  let half =Math.floor(length / 2)
+  
+  while(half--){
+      list = list.next
+  }
+  
+  return list
+};

@@ -44,3 +44,20 @@ const choiGenerate = function(numRows) {
 
 // 처음과 끝은 무조건 1;
 // 앞 인덱스의 본인인덱스 -1, 본인인덱스를 더한 값이 자기 숫자
+
+
+// * doeun --------------------------------------------------------------------------------------------------------------------//
+const hwangGenerate = function(numRows) {
+  const pascal = [];
+  
+ for(let i = 0; i < numRows; i++){
+     pascal[i] = []   
+
+     for(let j = 0; j < i + 1; j++){
+         if(j === 0 || j == i) pascal[i][j] = 1;
+         else pascal[i][j] = pascal[i - 1][j - 1] + pascal[i - 1][j]
+     }
+ }
+  
+  return pascal
+};
