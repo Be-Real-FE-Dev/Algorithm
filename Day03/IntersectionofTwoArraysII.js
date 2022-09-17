@@ -88,3 +88,19 @@ const intersect = function(nums1, nums2) {
   
   return result;
 };
+
+//Dabin's solution ------------------------------------------------------------------------------
+var kimIntersect = function(nums1,nums2) {
+  let arr = [];
+  
+  for(let i=0; i<nums1.length; i++){
+      if(nums2.includes(nums1[i])) {
+          arr.push(nums1[i]);
+          nums2.splice(nums2.indexOf(nums1[i]), 1);
+      }
+  }
+  // const answer = nums1.filter(num => nums2.includes(num))
+  return arr;
+};
+
+// End of Dabin -----------------------------------------------------------------------------------
