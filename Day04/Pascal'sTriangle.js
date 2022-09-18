@@ -20,10 +20,7 @@ const parkGenerate = numRows => {
   return dp;
 };
 
-function flatDeep(arr, d = 1) {
-  return d > 0 ? arr.reduce((acc, val) => acc.concat(Array.isArray(val) ? flatDeep(val, d - 1) : val), [])
-               : arr.slice();
-};
+//* 최원오 -----------------------------------------------------------------------------
 
 const choiGenerate = function(numRows) {
     
