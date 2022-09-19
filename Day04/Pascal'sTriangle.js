@@ -59,3 +59,23 @@ const hwangGenerate = function(numRows) {
   return pascal
 };
 
+// * joeun --------------------------------------------------------------------------------------------------------------------//
+const leeGenerate = function(numRows) {
+  let t = [[1],[1,1]];
+  if (numRows <= t.length) return t.slice(0,numRows);
+
+  for (let i = 0; i < numRows-2; i++) {
+      let arr = [];
+      arr.push(1);
+      
+      for (let j = 0; j < t.length - 1; j++) {
+          const bottom = t[t.length-1];
+          arr.push(bottom[j] + bottom[j+1])
+      }
+      
+      arr.push(1)
+      t.push(arr)
+  }
+  
+  return t;
+};
