@@ -1,3 +1,22 @@
+
+// * doeun --------------------------------------------------------------------------------------------------------------------//
+const hwangPreorder = function(root) {
+  let arr = [];
+  hwangPreOrderValue(root, arr);
+  
+  return arr
+};
+
+function hwangPreOrderValue(node, arr){
+  if(node === null) return;
+  
+  arr.push(node.val);
+  for(let i = 0; i < node.children.length; i++){
+      preOrder(node.children[i], arr);
+  }
+}
+// * doeun end--------------------------------------------------------------------------------------------------------------------//
+
 //* 최원오 -----------------------------------------------------------------------------
 
 var preorder = function(root, answer=[]) { // 파라미터 추가로 빈 배열을 세팅한다.
@@ -9,3 +28,4 @@ var preorder = function(root, answer=[]) { // 파라미터 추가로 빈 배열�
   
   return answer; // 최종적으로 나오는 반환 값은 재귀를 다돌고 나온 배열
 };
+
