@@ -75,6 +75,25 @@ const leeMaxProfit = function (prices) {
     }
   }
 
+
+//Dabin's solution ----------------------------------------------------------------
+
+var kimMaxProfit = function(prices) {
+  let minBuy = Number.MAX_SAFE_INTEGER
+  let profit = 0;
+  
+  for(let i=0 ; i<prices.length; i++) {
+      if(prices[i] < minBuy) {
+          minBuy = prices[i];
+      }
+      profit = Math.max(prices[i] - minBuy, profit);
+  }
+  return profit;
+};
+
+//End of Dabin ----------------------------------------------------------------
+
   maxProfit.sort((a, b) => b - a);
   return maxProfit.length === 0 ? 0 : maxProfit[0];
 };
+
