@@ -50,9 +50,9 @@ const parkSearch = function (nums, target) {
     pivot = Math.floor((min + max) / 2);
 
     if (nums[pivot] > target) {
-      max -= 1;
+      max = pivot - 1;
     } else if (nums[pivot] < target) {
-      min += 1;
+      min = pivot + 1;
     } else {
       return pivot;
     }
