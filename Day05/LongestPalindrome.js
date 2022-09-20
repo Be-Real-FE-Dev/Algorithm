@@ -68,3 +68,30 @@ const parkLongestPalindrome = s => {
   );
 };
 
+
+
+//Dabin's solution ----------------------------------------------------------------------------------------
+var longestPalindrome = function(s) {
+  let arrS = [...s].sort((a,b) => a - b);
+  let even = 0;
+  let odd = 0;
+  let obj = {}
+  
+  arrS.forEach(char => {
+      obj[char] = (obj[char] || 0) + 1
+  })
+  
+
+  for (let char in obj) {
+      if(obj[char] % 2 === 0) {
+          even += obj[char]
+          console.log(even, obj[char], 'even')
+      }else if((obj[char] > 2 && obj[char] % 2 !== 0)){
+          even += (obj[char]-1);
+          odd += 1;
+      }else if(obj[char] === 1) odd += 1
+}
+  
+  return odd >= 1 ? even + 1 : even
+};
+//End of Dabin ----------------------------------------------------------------------------------------
