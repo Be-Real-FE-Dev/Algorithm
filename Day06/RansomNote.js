@@ -83,3 +83,14 @@ const choiCanConstruct = function (ransomNote, magazine) {
   return true;
 };
 
+//* 조은 -----------------------------------------------------------------------------
+
+const leeCanConstruct = function(ransomNote, magazine) {
+  let str = magazine.split('');
+  
+  for (let i = 0; i < ransomNote.length; i++) {
+      if (str.indexOf(ransomNote[i]) !== -1) str.splice(str.indexOf(ransomNote[i]), 1);
+      else return false; 
+  }
+  return true;
+};

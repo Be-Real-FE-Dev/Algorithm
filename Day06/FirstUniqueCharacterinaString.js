@@ -54,3 +54,23 @@ const choiFirstUniqChar = function (s) {
   }
   return -1;
 };
+
+
+//* 조은 -----------------------------------------------------------------------------
+
+const leeFirstUniqChar = function(s) {
+  let map = {};
+  
+  for (let i = 0; i < s.length; i++) {
+      const x = s[i];
+      map[x] = map[x] ? map[x]+1 : 1;
+  }   
+  
+  for (const key in map) {
+      if (map[key] === 1) {
+          return s.indexOf(key);
+      }
+  }
+  
+  return -1;
+};

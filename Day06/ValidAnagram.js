@@ -86,3 +86,20 @@ const choiIsAnagram = function (s, t) {
 
   return true;
 };
+
+
+//* 조은 -----------------------------------------------------------------------------
+
+const leeIsAnagram = function(s, t) {
+  let arrA = [];
+  let arrB = [];
+  
+  if (t.length !== s.length) return false;
+  
+  for (let i = 0; i < t.length; i++) {
+      arrA.push(t.charCodeAt(i))
+      arrB.push(s.charCodeAt(i))
+  }
+  
+  return (arrA.sort((a,b) => b-a).toString() === arrB.sort((a,b) => b-a).toString())
+};
