@@ -13,7 +13,10 @@ const choiSolution = function (isBadVersion) {
 
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 
+
+
 const hwangSolution = function(isBadVersion) {
+
 
   /**
    * @param {integer} n Total versions
