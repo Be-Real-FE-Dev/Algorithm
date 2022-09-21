@@ -35,6 +35,7 @@ const hwangSearch = function (nums, target) {
   return -1;
 };
 
+
 /**
  * * ************************* Park's Code *************************
  * @param {number[]} nums
@@ -59,3 +60,4 @@ const parkSearch = function (nums, target) {
   }
   return -1;
 };
+
