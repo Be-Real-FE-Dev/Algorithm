@@ -74,3 +74,27 @@ const parkIsValidSudoku = board => {
   }
   return true;
 };
+
+// * doeun --------------------------------------------------------------------------------------------------------------------//
+const hwangIsValidSudoku = function(board) {
+  const map = new Map();
+
+  
+  for(let i = 0; i < board.length; i++){
+      for(let j = 0; j < board.length; j++){
+          const val = board[i][j];
+          if(val === '.') continue;
+          const rowId = 'row' + j + val;
+          const colId = 'col' + i + val;
+          const squareId = 'square' + Math.floor(j / 3) + Math.floor(i / 3) + val;
+          if(map.get(rowId) || map.get(colId) || map.get(squareId)) return false;
+          
+          map.set(rowId, 1);
+          map.set(colId, 1);
+          map.set(squareId, 1);
+
+      }
+  }
+  
+  return true;
+};
