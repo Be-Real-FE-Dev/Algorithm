@@ -58,3 +58,26 @@ const parkSolution = function (isBadVersion) {
     return min;
   };
 };
+
+//Dabin's solution ------------------------------------------------------------------------------------------------------------------
+var kimSolution = function(isBadVersion) {
+  /**
+   * @param {integer} n Total versions
+   * @return {integer} The first bad version
+   */
+  
+  return function(n) {
+      let mid = 0;
+      let left = 0;
+      let right = n;
+
+      while(left <= right){
+          mid = Math.floor((left + right) /2) //2
+          if(!isBadVersion(mid-1) && isBadVersion(mid)) return mid;
+          if(!!isBadVersion(mid)) right = mid - 1;
+          else left = mid + 1; 
+      };
+  };
+};
+
+//End of Dabin --------------------------------------------------------------------------------------------------------------------
