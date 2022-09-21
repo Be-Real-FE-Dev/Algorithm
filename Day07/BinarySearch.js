@@ -34,3 +34,30 @@ const hwangSearch = function (nums, target) {
 
   return -1;
 };
+
+
+/**
+ * * ************************* Park's Code *************************
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+const parkSearch = function (nums, target) {
+  let pivot = 0;
+  let min = 0;
+  let max = nums.length - 1;
+
+  while (min <= max) {
+    pivot = Math.floor((min + max) / 2);
+
+    if (nums[pivot] > target) {
+      max = pivot - 1;
+    } else if (nums[pivot] < target) {
+      min = pivot + 1;
+    } else {
+      return pivot;
+    }
+  }
+  return -1;
+};
+
