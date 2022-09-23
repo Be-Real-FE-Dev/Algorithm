@@ -98,3 +98,29 @@ const choiIsValid = function (s) {
   }
   return answer.length === 0;
 };
+
+// Dabin --------------------------------------------------------------
+var isValid = function(s) {
+  let stack = [];
+
+  for(let i=0; i<s.length; i++){
+      switch(s[i]){
+          case '(' :
+           stack.push('(');
+           break;
+          case '{' :
+           stack.push('{');
+           break;
+          case '[' :
+           stack.push('[');
+           break;
+      };
+
+       if(stack[stack.length-1] === '(' && s[i] === ')' || stack[stack.length-1] === '{' && s[i] === '}' || stack[stack.length-1] === '[' && s[i] === ']' ) {
+        console.log(stack.pop()); 
+        stack.pop();
+       }
+      else stack.push(s[i])
+  };
+  return stack.length === 0 ? true : false;
+};
