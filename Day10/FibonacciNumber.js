@@ -22,3 +22,10 @@ const parkFib = function (n) {
   }
   return prev;
 };
+
+//* 최원오 -----------------------------------------------------------------------------
+const choiFib = function (n) {
+  if (n < 2) return n;
+
+  return choiFib(n - 1) + choiFib(n - 2);
+};
