@@ -1,6 +1,8 @@
 /**
- * * Park ******************************************************************************
- * * 시간 초과
+ * * Park brute force case using permutation **********************************************************
+ * ! 시간 초과
+ * * 문제에서 알려준 hint
+ * * "s and p consist of lowercase English letters." => hash 사용 문제 고려해보기
  * @param {string} s
  * @param {string} p
  * @return {number[]}
@@ -34,6 +36,45 @@ const parkFindAnagrams = function (s, p) {
   return result;
 };
 
-// console.log(findAnagrams('cbaebabacd', 'abc'));
+/**
+ * * Park: Hash version  ********************************************************************************
+ * @param {string} s
+ * @param {string} p
+ * @return {number[]}
+ */
+const findAnagrams = function (s, p) {
+  const result = [];
+  const map = new Map();
+  for (let i = 0; i < p.length; i++) {
+    if (map.has(p[i])) {
+      map.set(p[i], map.get(p[i]) + 1);
+    } else {
+      map.set(p[i], 1);
+    }
+  }
 
-console.log(findAnagrams('abab', 'ab'));
+  let left = 0;
+  let right = 0;
+  while (right < s.length) {
+    console.log(left, right);
+    console.log(map);
+    if (map.get(s[right]) > 0) {
+      map.set(s[right], map.get(s[right]) - 1);
+      right++;
+      if (right - left === p.length) {
+        result.push(left);
+      }
+    } else if (left === right) {
+      left++;
+      right++;
+    } else {
+      map.set(s[left], map.get(s[left]) + 1);
+      left++;
+    }
+  }
+  return result;
+};
+
+console.log(findAnagrams('cbaebabacd', 'abc'));
+
+// console.log(findAnagrams('abab', 'ab'));
