@@ -33,7 +33,6 @@ ParkMyQueue.prototype.empty = function () {
   return !this.queue.length;
 };
 
-
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const HwangMyQueue = function () {
   this.array = [];
