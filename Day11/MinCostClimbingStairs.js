@@ -1,3 +1,16 @@
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+const parkMaxDepth = function (root) {
+  if (!root) return 0;
+
+  const leftMaxDepth = 1 + maxDepth(root.left);
+  const rightMaxDepth = 1 + maxDepth(root.right);
+
+  return Math.max(leftMaxDepth, rightMaxDepth);
+};
+
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangMinCostClimbingStairs = function(cost) {
   const dp = [cost[0], cost[1]];
@@ -8,3 +21,4 @@ const hwangMinCostClimbingStairs = function(cost) {
   
   return Math.min(dp[cost.length - 1], dp[cost.length - 2])
 };
+
