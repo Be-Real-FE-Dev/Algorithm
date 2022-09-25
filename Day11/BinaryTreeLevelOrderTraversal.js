@@ -1,3 +1,4 @@
+
 //* 최원오 -----------------------------------------------------------------------------
 
 const choiLevelOrder = function (root) {
@@ -6,20 +7,44 @@ const choiLevelOrder = function (root) {
   if (!root) return answer;
 
   const DFS = (node, depth) => {
-    // 현재 노드와 depth를 설정
+
     if (!node) return answer;
 
     if (!answer[depth]) {
-      answer[depth] = [node.val]; // depth의 배열이 비어있으면 노드의 val로 하고
+      answer[depth] = [node.val]; 
     } else {
-      answer[depth].push(node.val); // 배열에 값이 있으면 푸시로 추가한다.
+      answer[depth].push(node.val); 
     }
 
-    DFS(node.left, depth + 1); // depth를 더한 후 재귀
+    DFS(node.left, depth + 1); 
     DFS(node.right, depth + 1);
   };
 
   DFS(root, 0);
 
   return answer;
+
+// * doeun --------------------------------------------------------------------------------------------------------------------//
+const hwangLevelOrder = function(root) {
+  if(!root) return [];
+  
+  let nodes = [];
+  let q = [root];
+  
+  while(q.length){
+      let len = q.length;
+      let subNodes = [];
+      
+      for(let i = 0; i < len; i++){
+          let node = q.shift();
+          subNodes.push(node.val);
+          if(node.left) q.push(node.left)
+          if(node.right) q.push(node.right)
+      }
+      
+      nodes.push(subNodes);
+  }
+  
+  return nodes
+
 };
