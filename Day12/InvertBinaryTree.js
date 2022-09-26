@@ -34,3 +34,17 @@ const parkInvertTree = function (root) {
 
   return root;
 };
+
+//* 최원오 -----------------------------------------------------------------------------
+
+const choiInvertTree = function (root) {
+  if (!root) return root;
+
+  const left = choiInvertTree(root.left);
+  const right = choiInvertTree(root.right);
+
+  root.left = right;
+  root.right = left;
+
+  return root;
+};
