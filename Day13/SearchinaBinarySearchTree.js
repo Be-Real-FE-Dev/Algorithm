@@ -1,3 +1,19 @@
+
+//* 최원오 -----------------------------------------------------------------------------
+
+const choiSearchBST = function (root, val) {
+  while (root.val !== val) {
+    if (root.val > val) {
+      root = root.left;
+    } else {
+      root = root.right;
+    }
+
+    if (!root) return root;
+  }
+
+  return root;
+
 /**
  * * Park *****************************************************************
  * @param {TreeNode} root
@@ -11,4 +27,5 @@ const parkSearchBST = function (root, val) {
 
   if (val < root.val) return parkSearchBST(root.left, val);
   return parkSearchBST(root.right, val);
+
 };
