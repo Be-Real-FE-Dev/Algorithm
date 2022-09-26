@@ -1,3 +1,4 @@
+
 //* 최원오 -----------------------------------------------------------------------------
 
 const choiTwoSum = function (nums, target) {
@@ -14,4 +15,24 @@ const choiTwoSum = function (nums, target) {
       j = i + 1;
     }
   }
+
+/**
+ * * Park ********************************************************************************
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+const parkTwoSum = function (nums, target) {
+  let result;
+  const map = new Map();
+
+  nums.forEach((el, index) => {
+    if (map.has(target - el)) {
+      result = [map.get(target - el), index];
+    }
+    map.set(el, index);
+  });
+
+  return result;
+
 };
