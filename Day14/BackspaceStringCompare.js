@@ -15,3 +15,24 @@ const backSpace = function (string) {
 const parkBackspaceCompare = function (s, t) {
   return backSpace(s) === backSpace(t);
 };
+
+// * doeun --------------------------------------------------------------------------------------------------------------------//
+const hwangBackspaceCompare = function (s, t) {
+  const stackStr = str => {
+    const stack = [];
+
+    for (let i = 0; i < str.length; i++) {
+      const mark = str[i];
+      if (mark === '#') {
+        stack.pop();
+        continue;
+      }
+
+      stack.push(mark);
+    }
+
+    return stack.join('');
+  };
+
+  return stackStr(s) === stackStr(t);
+};
