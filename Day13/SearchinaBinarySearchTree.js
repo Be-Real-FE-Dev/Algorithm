@@ -35,5 +35,4 @@ const parkSearchBST = function (root, val) {
 
   if (val < root.val) return parkSearchBST(root.left, val);
   return parkSearchBST(root.right, val);
-
 };
