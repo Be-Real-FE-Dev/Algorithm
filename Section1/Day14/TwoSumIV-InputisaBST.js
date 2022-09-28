@@ -1,4 +1,3 @@
-
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangFindTarget = function (root, k) {
   return hwangBst(root, k, []);
@@ -13,7 +12,6 @@ function hwangBst(node, k, arr) {
   return hwangBst(node.left, k, arr) || hwangBst(node.right, k, arr);
 }
 // * doeun end--------------------------------------------------------------------------------------------------------------------//
-
 
 //* 최원오 -----------------------------------------------------------------------------
 
@@ -39,7 +37,7 @@ const choiFindTarget = function (root, k) {
     }
   }
   return false;
-
+};
 /**
  * @param {TreeNode} root
  * @param {number} k
@@ -58,6 +56,4 @@ const parkFindTarget = function (root, k) {
   };
 
   return traverse(root);
-
 };
-

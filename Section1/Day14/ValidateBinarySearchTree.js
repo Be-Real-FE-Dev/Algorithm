@@ -1,4 +1,3 @@
-
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangIsValidBST = function (root) {
   return hwangBst(root, null, null);
@@ -13,7 +12,6 @@ function hwangBst(node, min, max) {
 }
 // * doeun end--------------------------------------------------------------------------------------------------------------------//
 
-
 //* 최원오 -----------------------------------------------------------------------------
 
 const choiIsValidBST = function (root, min, max) {
@@ -22,7 +20,7 @@ const choiIsValidBST = function (root, min, max) {
   if (max != null && root.val >= max) return false;
 
   return choiIsValidBST(root.left, min, root.val) && choiIsValidBST(root.right, root.val, max);
-
+};
 /**
  * * Park ******************************************************
  * @param {TreeNode} root
@@ -36,6 +34,4 @@ const parkIsValidBST = function (root) {
   };
 
   return traverse(root, -Infinity, Infinity);
-
 };
-
