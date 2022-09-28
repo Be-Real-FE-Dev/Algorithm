@@ -1,4 +1,3 @@
-
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangInsertIntoBST = function (root, val) {
   if (!root) {
@@ -7,10 +6,10 @@ const hwangInsertIntoBST = function (root, val) {
     root.left = hwangInsertIntoBST(root.left, val);
   } else if (val > root.val) {
     root.right = hwangInsertIntoBST(root.right, val);
-    }
-    
-    return root
-}
+  }
+
+  return root;
+};
 
 //* 최원오 -----------------------------------------------------------------------------
 
@@ -22,7 +21,8 @@ const choiInsertIntoBST = function (root, val) {
   } else {
     root.right = choiInsertIntoBST(root.right, val);
   }
-
+  return root;
+};
 
 /**
  * * Park *************************************************
