@@ -78,3 +78,36 @@ const findAnagrams = function (s, p) {
 console.log(findAnagrams('cbaebabacd', 'abc'));
 
 // console.log(findAnagrams('abab', 'ab'));
+
+// * doeun --------------------------------------------------------------------------------------------------------------------//
+const hwangFindAnagrams = function (s, p) {
+  const map = new Map();
+
+  for (const word of p) {
+    if (map.has(word)) map.set(word, map.get(word) + 1);
+    else map.set(word, 1);
+  }
+
+  const result = [];
+  let start = 0;
+  let end = 0;
+
+  while (end < s.length) {
+    if (map.get(s[end]) > 0) {
+      map.set(s[end], map.get(s[end]) - 1);
+      end += 1;
+
+      if (end - start === p.length) {
+        result.push(start);
+      }
+    } else if (start === end) {
+      start += 1;
+      end += 1;
+    } else {
+      map.set(s[start], map.get(s[start]) + 1);
+      start += 1;
+    }
+  }
+
+  return result;
+};

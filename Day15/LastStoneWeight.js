@@ -1,4 +1,18 @@
 
+// * doeun --------------------------------------------------------------------------------------------------------------------//
+const hwangLastStoneWeight = function (stones) {
+  while (stones.length > 1) {
+    stones.sort((a, b) => b - a);
+
+    const y = stones.shift();
+    const x = stones.shift();
+
+    if (y !== x) stones.push(y - x);
+  }
+
+  return stones.length ? stones[0] : 0;
+}
+
 //* 최원오 -----------------------------------------------------------------------------
 
 const choiLastStoneWeight = function (stones) {
@@ -13,7 +27,7 @@ const choiLastStoneWeight = function (stones) {
     }
   }
   return stones.length === 0 ? 0 : stones[0];
-
+}
 /**
  * * Park ************************************************
  * @param {number[]} stones
@@ -31,5 +45,4 @@ const parkLastStoneWeight = function (stones) {
     }
   }
   return stones;
-
 };
