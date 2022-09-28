@@ -28,3 +28,17 @@ const parkDecodeString = function (s) {
 };
 
 console.log(parkDecodeString('3[a2[c]]'));
+
+// * doeun --------------------------------------------------------------------------------------------------------------------//
+const hwangDecodeString = function (s) {
+  while (s.match(/\d/g)) {
+    s = s.replace(/\d+\[[a-z]+\]/gi, match => {
+      const number = match.match(/\d+/)[0];
+      const str = match.match(/[a-z]+/gi)[0];
+
+      return str.repeat(number);
+    });
+  }
+
+  return s;
+};
