@@ -42,3 +42,32 @@ const hwangDecodeString = function (s) {
 
   return s;
 };
+
+const hwangStackDecodeString = function (s) {
+  const stack = [];
+
+  for (let i = 0; i < s.length; i++) {
+    const str = s[i];
+    if (str !== ']') stack.push(str);
+    else {
+      let result = '';
+      let num = '';
+
+      while (stack[stack.length - 1] && stack[stack.length - 1] !== '[') {
+        result = stack.pop() + result;
+      }
+
+      stack.pop();
+
+      while (stack[stack.length - 1] && !Number.isNaN(parseInt(stack[stack.length - 1]))) {
+        num = stack.pop() + num;
+      }
+
+      const new_str = result.repeat(+num);
+      stack.push(new_str);
+    }
+  }
+
+  return stack.join('');
+};
+// * doeun end--------------------------------------------------------------------------------------------------------------------//
