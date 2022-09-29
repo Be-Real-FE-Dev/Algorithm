@@ -1,3 +1,27 @@
+/**
+ * * Park *******************************************************
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+const parkSearchInsert = function (nums, target) {
+  let pivot = 0;
+  let left = 0;
+  let right = nums.length - 1;
+
+  while (left <= right) {
+    pivot = Math.floor((left + right) / 2);
+
+    if (nums[pivot] > target) {
+      right = pivot - 1;
+    } else if (nums[pivot] < target) {
+      left = pivot + 1;
+    } else {
+      return pivot;
+    }
+  }
+  return left;
+}
 
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangSearchInsert = function (nums, target) {
@@ -15,6 +39,7 @@ const hwangSearchInsert = function (nums, target) {
 
   return left;
 }
+
 //* 최원오 -----------------------------------------------------------------------------
 
 const choiSearchInsert = function (nums, target) {
