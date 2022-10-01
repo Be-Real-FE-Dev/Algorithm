@@ -33,3 +33,34 @@ const choiGenerateMatrix = function (n) {
 };
 
 choiGenerateMatrix(3);
+
+// * doeun --------------------------------------------------------------------------------------------------------------------//
+const hwangGenerateMatrix = function (n) {
+  const arr = Array.from(new Array(n), () => new Array(n).fill(0));
+
+  let y = 0;
+  let x = -1;
+  let dir = 1;
+  let num = 1;
+
+  while (true) {
+    for (let i = 0; i < n; i++) {
+      x += dir;
+      arr[y][x] = num;
+      num += 1;
+    }
+
+    n -= 1;
+    if (n === 0) break;
+
+    for (let i = 0; i < n; i++) {
+      y += dir;
+      arr[y][x] = num;
+      num += 1;
+    }
+
+    dir *= -1;
+  }
+
+  return arr;
+};
