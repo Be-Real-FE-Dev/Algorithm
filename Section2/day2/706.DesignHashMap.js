@@ -1,20 +1,29 @@
+// * Park ************************************************
+const ParkMyHashMap = function () {
+  this.hashMap = {};
+};
+
 /**
- * * Park *******************************************************
- * @param {number[][]} intervals
- * @return {number[][]}
+ * @param {number} key
+ * @param {number} value
+ * @return {void}
  */
-const parkMerge = function (intervals) {
-  const result = [];
+ParkMyHashMap.prototype.put = function (key, value) {
+  this.hashMap[key] = value;
+};
 
-  intervals.sort((a, b) => a[0] - b[0]);
+/**
+ * @param {number} key
+ * @return {number}
+ */
+ParkMyHashMap.prototype.get = function (key) {
+  return this.hashMap.hasOwnProperty(key) ? this.hashMap[key] : -1;
+};
 
-  intervals.forEach(interval => {
-    if (result.length === 0 || result[result.length - 1][1] < interval[0]) {
-      result.push(interval);
-    } else {
-      result[result.length - 1][1] = Math.max(result[result.length - 1][1], interval[1]);
-    }
-  });
-
-  return result;
+/**
+ * @param {number} key
+ * @return {void}
+ */
+ParkMyHashMap.prototype.remove = function (key) {
+  delete this.hashMap[key];
 };
