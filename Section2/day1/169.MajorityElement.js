@@ -54,3 +54,19 @@ const choiMajorityElement2 = function (nums) {
   return nums[Math.floor(nums.length / 2)];
 };
 
+// * joeun --------------------------------------------------------------------------------------------------------------------//
+var leeMajorityElement = function(nums) { 
+  // for(let i = 0; i < nums.length; i++) {
+  //     if (nums.filter((num) => nums[i] === num).length > Math.floor(nums.length / 2)) return nums[i]
+  // }
+  
+  let map = {};
+  
+  for(let i = 0; i < nums.length; i++) {
+      const x = nums[i];
+      map[x] = map[x] ? map[x]+1 : 1; 
+   
+      if (map[x] > Math.floor(nums.length /2)) return x;
+  }
+};
+
