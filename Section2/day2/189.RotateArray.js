@@ -25,3 +25,21 @@ const choiRotate = function (nums, k) {
 
   return nums;
 };
+
+// * doeun --------------------------------------------------------------------------------------------------------------------//
+const hwangRotate = function (nums, k) {
+  k %= nums.length;
+
+  hwangReverse(nums, 0, nums.length - 1);
+  hwangReverse(nums, k, nums.length - 1);
+  hwangReverse(nums, 0, k - 1);
+};
+
+function hwangReverse(arr, s, e) {
+  while (s < e) {
+    [arr[s], arr[e]] = [arr[e], arr[s]];
+    s += 1;
+    e -= 1;
+  }
+}
+// * doeun end--------------------------------------------------------------------------------------------------------------------//
