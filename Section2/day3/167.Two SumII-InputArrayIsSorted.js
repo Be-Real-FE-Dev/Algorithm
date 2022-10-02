@@ -14,6 +14,7 @@ const choiTwoSum = function (numbers, target) {
   return [s + 1, e + 1];
 };
 
+
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangTwoSum = function (numbers, target) {
   let left = 0;
@@ -29,4 +30,26 @@ const hwangTwoSum = function (numbers, target) {
       right -= 1;
     }
   }
+}
+
+/**
+ * * Park *********************************************
+ * @param {number[]} numbers
+ * @param {number} target
+ * @return {number[]}
+ */
+const parkTwoSum = function (numbers, target) {
+  let slow = 0;
+  let fast = 1;
+  let sum;
+  while (sum !== target) {
+    sum = numbers[slow] + numbers[fast];
+    if (sum > target) {
+      slow--;
+    } else if (sum < target) {
+      slow++;
+      fast++;
+    }
+  }
+  return [slow + 1, fast + 1];
 };

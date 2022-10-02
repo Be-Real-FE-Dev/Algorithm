@@ -1,3 +1,4 @@
+
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangSortColors1 = function (nums) {
   for (let i = 0; i < nums.length; i++) {
@@ -27,3 +28,13 @@ const hwangSortColors2 = function (nums) {
   }
 };
 // * doeun end--------------------------------------------------------------------------------------------------------------------//
+
+/**
+ * * Park *******************************************************
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+const parkSortColors = function (nums) {
+  nums.sort((a, b) => a - b);
+};
+

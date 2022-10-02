@@ -6,6 +6,7 @@ const choiMoveZeroes = function (nums) {
   }
 };
 
+
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangMoveZeroes = function (nums) {
   let i = 0;
@@ -24,4 +25,23 @@ const hwangMoveZeroes = function (nums) {
     nums[j] = 0;
     j += 1;
   }
+}
+/**
+ * * Park ************************************************
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+const moveZeroes = function (nums) {
+  let slow = 0;
+  let fast = 0;
+
+  while (fast < nums.length) {
+    if (nums[fast] !== 0) {
+      [nums[slow], nums[fast]] = [nums[fast], nums[slow]];
+      slow++;
+    }
+    fast++;
+  }
+
+  return nums;
 };
