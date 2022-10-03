@@ -30,3 +30,14 @@ const choiReverseWords = function (s) {
 
   return sArr.join(' ');
 };
+
+/**
+ * * Park ******************************************
+ * @param {string} s
+ * @return {string}
+ */
+const parkReverseWords = s =>
+  s
+    .split(' ')
+    .map(el => el.split('').reverse().join(''))
+    .join(' ');
