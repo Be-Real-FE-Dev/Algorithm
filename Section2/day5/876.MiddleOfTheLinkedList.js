@@ -22,3 +22,25 @@ const choiMiddleNode = function (head) {
     count += 1;
   }
 };
+
+/**
+ * * Park *******************************************************
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+const parkMiddleNode = function (head) {
+  let slow = head;
+  let fast = head;
+  let index = 1;
+
+  while (fast) {
+    if (index % 2 === 0) {
+      slow = slow.next;
+      fast = fast.next;
+    } else {
+      fast = fast.next;
+    }
+    index++;
+  }
+  return slow;
+};

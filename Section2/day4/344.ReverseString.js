@@ -18,3 +18,10 @@ const choiReverseString = function (s) {
 
   return s;
 };
+
+/**
+ * * Park ********************************************************
+ * @param {character[]} s
+ * @return {void} Do not return anything, modify s in-place instead.
+ */
+const parkReverseString = s => s.reverse();
