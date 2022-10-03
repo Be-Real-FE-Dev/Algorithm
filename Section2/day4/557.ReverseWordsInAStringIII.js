@@ -20,3 +20,13 @@ function hwangReverse(str) {
   return str.join('');
 }
 // * doeun end--------------------------------------------------------------------------------------------------------------------//
+
+//* 최원오 -----------------------------------------------------------------------------
+const choiReverseWords = function (s) {
+  const sArr = s.split(' ');
+  sArr.forEach((word, idx) => {
+    sArr[idx] = word.split('').reverse().join('');
+  });
+
+  return sArr.join(' ');
+};
