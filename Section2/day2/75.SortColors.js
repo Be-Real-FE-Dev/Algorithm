@@ -38,3 +38,28 @@ const parkSortColors = function (nums) {
   nums.sort((a, b) => a - b);
 };
 
+
+// * joeun --------------------------------------------------------------------------------------------------------------------//
+
+const leeSortColors = function(nums) {
+    
+    for (let i = 0; i < nums.length; i++) {
+        let lazy = i;
+        let fast = i + 1;
+        
+        while (fast < nums.length) {
+            if (nums[lazy] > nums[fast]) {
+                let temp = nums[lazy];
+                nums[lazy] = nums[fast];
+                nums[fast] = temp;
+            } 
+            if (nums[lazy] === nums[fast]) {
+                let temp = nums[lazy+1];
+                nums[lazy+1] = nums[fast];
+                nums[fast] = temp;
+            } 
+            fast += 1;
+        }
+        
+    }    
+};
