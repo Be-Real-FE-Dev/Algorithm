@@ -43,3 +43,26 @@ const parkMerge = function (intervals) {
 
   return result;
 };
+
+// * joeun --------------------------------------------------------------------------------------------------------------------//
+const leeMerge = function(intervals) {    
+  let result = [];
+  
+  if (intervals.length === 1) return intervals;
+  
+  intervals.sort((a, b) => a[0] - b[0]);
+  
+  for (let i = 0; i < intervals.length; i++) {
+      let current = result[result.length-1]
+      
+      if (i > 0 && intervals[i][0] <= current[1]) {
+          if (intervals[i][1] > current[1]) {
+              current[1] = intervals[i][1]
+          }
+      } else {
+          result.push(intervals[i])
+      }
+  }
+  
+  return result;
+};
