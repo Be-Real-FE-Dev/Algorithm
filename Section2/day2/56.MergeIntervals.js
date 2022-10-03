@@ -1,7 +1,6 @@
-
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangMerge = function (intervals) {
-  intervals = intervals.sort((a, b) => a[0] - b[0]);
+  intervals.sort((a, b) => a[0] - b[0]);
   const arr = [intervals[0]];
 
   let first = 0;
@@ -23,7 +22,7 @@ const hwangMerge = function (intervals) {
   }
 
   return arr;
-}
+};
 /**
  * * Park *******************************************************
  * @param {number[][]} intervals
