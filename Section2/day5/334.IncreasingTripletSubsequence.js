@@ -33,3 +33,21 @@ const hwangIncreasingTriplet = function (nums) {
 
   return false;
 };
+
+//* 최원오 -----------------------------------------------------------------------------
+
+const choiIncreasingTriplet = function (nums) {
+  let p = Infinity;
+  let q = Infinity;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] <= p) {
+      p = nums[i];
+    } else if (nums[i] < q) {
+      q = nums[i];
+    } else if (nums[i] > q) {
+      return true;
+    }
+  }
+  return false;
+};
