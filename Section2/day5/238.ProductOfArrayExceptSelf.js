@@ -21,3 +21,23 @@ const parkProductExceptSelf = function (nums) {
 
   return result;
 };
+
+// * doeun --------------------------------------------------------------------------------------------------------------------//
+const hwangProductExceptSelf = function (nums) {
+  const arr = [];
+  arr[0] = nums.reduce((acc, cur, i) => {
+    if (i === 0) return acc;
+    return acc * cur;
+  }, 1);
+
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] !== 0) arr[i] = (arr[i - 1] / nums[i]) * nums[i - 1];
+    else
+      arr[i] = nums.reduce((acc, cur, idx) => {
+        if (i === idx) return acc;
+        return acc * cur;
+      }, 1);
+  }
+
+  return arr;
+};

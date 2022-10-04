@@ -44,3 +44,16 @@ const parkMiddleNode = function (head) {
   }
   return slow;
 };
+
+// * doeun --------------------------------------------------------------------------------------------------------------------//
+const hwangMiddleNode = function (head) {
+  let slow = head;
+  let fast = head.next;
+
+  while (fast) {
+    fast = fast.next?.next;
+    slow = slow.next;
+  }
+
+  return slow;
+};

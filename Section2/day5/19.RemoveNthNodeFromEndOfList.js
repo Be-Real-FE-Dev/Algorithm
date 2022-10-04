@@ -23,3 +23,27 @@ const parkRemoveNthFromEnd = function (head, n) {
 
   return head;
 };
+
+// * doeun --------------------------------------------------------------------------------------------------------------------//
+const hwangRemoveNthFromEnd = function (head, n) {
+  let slow = head;
+  let fast = head;
+
+  while (n--) {
+    if (!fast.next) {
+      head = head.next;
+      return head;
+    }
+
+    fast = fast.next;
+  }
+
+  while (fast.next) {
+    fast = fast.next;
+    slow = slow.next;
+  }
+
+  slow.next = slow.next.next;
+
+  return head;
+};
