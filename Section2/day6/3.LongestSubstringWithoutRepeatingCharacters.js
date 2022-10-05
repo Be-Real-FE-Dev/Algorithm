@@ -42,3 +42,25 @@ const hwangLengthOfLongestSubstring = function (s) {
 
   return max;
 };
+
+//* 최원오 -----------------------------------------------------------------------------
+
+const choiLengthOfLongestSubstring = function (s) {
+  let max = 0;
+  let arr = [];
+
+  for (let i = 0; i < s.length; i++) {
+    if (arr.includes(s[i])) {
+      max = Math.max(max, arr.length);
+      arr = arr.slice(arr.indexOf(s[i]) + 1);
+    }
+
+    arr.push(s[i]);
+
+    if (i === s.length - 1) {
+      max = Math.max(max, arr.length);
+    }
+  }
+
+  return max;
+};
