@@ -1,3 +1,14 @@
+
+/**
+ * Park **********************************************************************
+ * @param {string} num1
+ * @param {string} num2
+ * @return {string}
+ */
+const parkAddStrings = function (num1, num2) {
+  return (BigInt(num1) + BigInt(num2)).toString();
+}
+=======
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangAddStrings = function (num1, num2) {
   const max = Math.max(num1.length, num2.length);

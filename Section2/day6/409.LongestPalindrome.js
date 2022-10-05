@@ -1,3 +1,28 @@
+/**
+ * Park **********************************************************************
+ * @param {string} s
+ * @return {number}
+ */
+const aparkLongestPalindrome = function (s) {
+  const set = new Set();
+  let result = 0;
+
+  [...s].forEach(char => {
+    if (set.has(char)) {
+      result += 2;
+      set.delete(char);
+    } else {
+      set.add(char);
+    }
+  });
+
+  if (set.size) {
+    result++;
+  }
+
+  return result;
+};
+
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangLongestPalindrome1 = function (s) {
   const map = new Map();
@@ -32,3 +57,4 @@ const hwangLongestPalindrome2 = function (s) {
   return odd > 0 ? s.length - odd + 1 : s.length;
 };
 // * doeun end--------------------------------------------------------------------------------------------------------------------//
+
