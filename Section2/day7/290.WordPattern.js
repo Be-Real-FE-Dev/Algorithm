@@ -18,3 +18,10 @@ const choiWordPattern = function (pattern, s) {
 
   return map.size === set.size;
 };
+
+// * doeun --------------------------------------------------------------------------------------------------------------------//
+const hwangWordPattern = function (pattern, s) {
+  s = s.split(' ');
+  if (pattern.length !== s.length) return false;
+  return [...pattern].filter((val, i, self) => self.indexOf(val) !== s.indexOf(s[i])).length === 0;
+};
