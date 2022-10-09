@@ -39,3 +39,17 @@ const parkMergeTwoLists = function (list1, list2) {
   list2.next = parkMergeTwoLists(list1, list2.next);
   return list2;
 };
+
+//* 최원오 -----------------------------------------------------------------------------
+
+const choiMergeTwoLists = function (list1, list2) {
+  if (!list1) return list2;
+  if (!list2) return list1;
+
+  if (list1.val <= list2.val) {
+    list1.next = choiMergeTwoLists(list1.next, list2);
+    return list1;
+  }
+  list2.next = choiMergeTwoLists(list1, list2.next);
+  return list2;
+};
