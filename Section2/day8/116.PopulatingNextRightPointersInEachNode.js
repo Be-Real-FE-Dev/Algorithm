@@ -16,3 +16,25 @@ const hwangConnect = function (root) {
 
   return root;
 };
+
+/**
+ * * Park ******************************************************
+ * @param {Node} root
+ * @return {Node}
+ */
+const parkConnect = function (root) {
+  const tree = root;
+
+  while (root && root.left) {
+    let cur = root;
+
+    while (cur) {
+      cur.left.next = cur.right;
+      cur.right.next = cur.next ? cur.next.left : null;
+      cur = cur.next;
+    }
+    root = root.left;
+  }
+
+  return tree;
+};

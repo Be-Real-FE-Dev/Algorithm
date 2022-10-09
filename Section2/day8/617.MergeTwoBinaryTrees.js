@@ -23,3 +23,20 @@ const hwangMergeTrees = function (root1, root2) {
 
   return root1;
 };
+
+/**
+ * * Park ******************************************************
+ * @param {TreeNode} root1
+ * @param {TreeNode} root2
+ * @return {TreeNode}
+ */
+const mergeTrees = function (root1, root2) {
+  if (!root1 && !root2) return null;
+
+  const mergeTree = new TreeNode((root1?.val || 0) + (root2?.val || 0));
+
+  mergeTree.left = mergeTrees(root1?.left, root2?.left);
+  mergeTree.right = mergeTrees(root1?.right, root2?.right);
+
+  return mergeTree;
+};

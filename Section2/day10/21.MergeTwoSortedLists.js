@@ -22,3 +22,20 @@ const hwangMergeTwoLists = function (list1, list2) {
 
   return mergeList.next;
 };
+
+/**
+ * * Park ************************************************
+ * @param {ListNode} list1
+ * @param {ListNode} list2
+ * @return {ListNode}
+ */
+const parkMergeTwoLists = function (list1, list2) {
+  if (!list1 || !list2) return list1 || list2;
+
+  if (list1.val < list2.val) {
+    list1.next = parkMergeTwoLists(list1.next, list2);
+    return list1;
+  }
+  list2.next = parkMergeTwoLists(list1, list2.next);
+  return list2;
+};
