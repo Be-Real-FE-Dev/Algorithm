@@ -37,4 +37,23 @@ const swapPairs = function (head) {
   }
 
   return newList;
+}
+//* 최원오 -----------------------------------------------------------------------------
+
+const choiSwapPairs = function (head) {
+  const prev = new ListNode(null, head);
+  let cur = prev;
+
+  while (cur.next && cur.next.next) {
+    const odd = cur.next;
+    const even = cur.next.next;
+
+    odd.next = even.next;
+    even.next = odd;
+    cur.next = even;
+
+    cur = cur.next.next;
+  }
+
+  return prev.next;
 };
