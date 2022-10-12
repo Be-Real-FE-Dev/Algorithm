@@ -102,3 +102,101 @@ HwangMyLinkedList.prototype.deleteAtIndex = function (index) {
   }
 };
 // * doeun end--------------------------------------------------------------------------------------------------------------------//
+
+// * Park *****************************************************************************
+const MyLinkedList = function (head = null) {
+  this.head = head;
+};
+
+/**
+ * @param {number} index
+ * @return {number}
+ */
+MyLinkedList.prototype.get = function (index) {
+  let node = this.head;
+  if (index === 0) return node === null ? -1 : node.value;
+
+  let i = 0;
+  while (node !== null && i < index) {
+    node = node.next;
+    i++;
+  }
+
+  if (node === null) return -1;
+
+  return node.value;
+};
+
+MyLinkedList.prototype.getNode = function (index) {
+  let node = this.head;
+
+  if (index === 0) return node;
+
+  let i = 0;
+  while (node !== null && i < index) {
+    node = node.next;
+    i++;
+  }
+
+  return node;
+};
+
+/**
+ * @param {number} val
+ * @return {void}
+ */
+MyLinkedList.prototype.addAtHead = function (val) {
+  const headNode = new Node(val);
+  headNode.next = this.head;
+  this.head = headNode;
+};
+
+/**
+ * @param {number} val
+ * @return {void}
+ */
+MyLinkedList.prototype.addAtTail = function (val) {
+  const nodeToAdd = new Node(val);
+  let node = this.head;
+  if (node === null) {
+    this.head = nodeToAdd;
+  } else {
+    while (node.next != null) {
+      node = node.next;
+    }
+    node.next = nodeToAdd;
+  }
+};
+
+/**
+ * @param {number} index
+ * @param {number} val
+ * @return {void}
+ */
+MyLinkedList.prototype.addAtIndex = function (index, val) {
+  const nodeToAdd = new Node(val);
+  if (index === 0) {
+    this.addAtHead(val);
+  } else {
+    const prev = this.getNode(index - 1);
+    if (prev !== null) {
+      const next = this.getNode(index);
+      prev.next = nodeToAdd;
+      nodeToAdd.next = next;
+    }
+  }
+};
+
+/**
+ * @param {number} index
+ * @return {void}
+ */
+MyLinkedList.prototype.deleteAtIndex = function (index) {
+  if (index === 0) {
+    this.head = this.head.next;
+  } else {
+    const prev = this.getNode(index - 1);
+    const next = this.getNode(index + 1);
+    if (prev !== null) prev.next = next;
+  }
+};

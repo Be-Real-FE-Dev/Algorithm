@@ -1,3 +1,11 @@
+/**
+ * * Park ********************************************************
+ * @param {number} n
+ * @return {boolean}
+ */
+const parkIsPowerOfTwo = function (n) {
+  return n > 0 && (n & (n - 1)) === 0;
+}
 
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangIsPowerOfTwo = function (n) {
@@ -10,6 +18,7 @@ const hwangIsPowerOfTwo = function (n) {
 
   return count === 1;
 }
+
 //* 최원오 -----------------------------------------------------------------------------
 
 const choiIsPowerOfTwo = function (n) {

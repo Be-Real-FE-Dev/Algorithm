@@ -1,3 +1,19 @@
+
+/**
+ * * Park ********************************************************
+ * @param {number} n - a positive integer
+ * @return {number}
+ */
+const parkHammingWeight = function (n) {
+  let count = 0;
+
+  while (n != 0) {
+    count += n & 1;
+    n >>>= 1;
+  }
+  return count;
+}
+
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangHammingWeight = function (n) {
   const len = n.toString(2).length;
@@ -9,6 +25,7 @@ const hwangHammingWeight = function (n) {
 
   return left + right;
 }
+
 //* 최원오 -----------------------------------------------------------------------------
 
 const choiHammingWeight = function (n) {

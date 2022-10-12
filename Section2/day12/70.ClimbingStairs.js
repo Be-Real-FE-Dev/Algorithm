@@ -9,6 +9,19 @@ const hwangClimbStairs = function (n) {
   return dp[n];
 };
 
+/**
+ * * Park ************************************************
+ * @param {number} n
+ * @return {number}
+ */
+const parkClimbStairs = function (n) {
+  let [prev, cur] = [1, 2];
+
+  for (let i = 1; i < n; i++) {
+    [prev, cur] = [cur, prev + cur];
+  }
+  return prev;
+}
 //* 최원오 -----------------------------------------------------------------------------
 
 const choiClimbStairs = function (n) {
