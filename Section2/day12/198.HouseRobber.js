@@ -11,3 +11,20 @@ const hwangRob = function (nums) {
 
   return Math.max(dp[nums.length - 1], dp[nums.length - 2]);
 };
+
+/**
+ * * Park ********************************************************
+ * @param {number[]} nums
+ * @return {number}
+ */
+const parkRob = function (nums) {
+  let [prev, cur] = [0, 0];
+
+  nums.forEach(n => {
+    const tmp = Math.max(n + prev, cur);
+    prev = cur;
+    cur = tmp;
+  });
+
+  return cur;
+};
