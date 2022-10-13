@@ -32,3 +32,23 @@ const hwangFindTheWinner2 = function (n, k) {
   return q[0];
 };
 // * doeun end-------------------------------------------------------------------------------------------------------------------//
+
+/**
+ * * Park **********************************************************************
+ * @param {number} n
+ * @param {number} k
+ * @return {number}
+ */
+const parkFindTheWinner = function (n, k) {
+  const queue = new Array(n).fill(0).map((_, i) => i + 1);
+
+  while (queue.length > 1) {
+    let count = k - 1;
+    while (count > 0) {
+      queue.push(queue.shift());
+      count -= 1;
+    }
+    queue.shift();
+  }
+  return queue[0];
+};
