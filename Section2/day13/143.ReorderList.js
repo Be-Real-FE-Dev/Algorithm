@@ -5,7 +5,12 @@
  */
 const parkReorderList = function (head) {
   let [slow, fast] = [head, head.next];
-  
+
+  while (fast && fast.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+
   let second = slow.next;
   slow.next = null;
 
