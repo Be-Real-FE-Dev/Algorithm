@@ -9,6 +9,7 @@ const parkReverseBits = function (n) {
   for (let i = 0; i < 32; i++) {
     const digit = n % 2;
     result = result * 2 + digit;
+
     n = (n - digit) / 2;
   }
 

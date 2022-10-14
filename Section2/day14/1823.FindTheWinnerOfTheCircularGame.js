@@ -1,4 +1,3 @@
-
 //* 최원오 -----------------------------------------------------------------------------
 
 const choiFindTheWinner = function (n, k) {
@@ -18,7 +17,7 @@ const choiFindTheWinner = function (n, k) {
   }
 
   return players[0];
-
+};
 // * doeun 1-------------------------------------------------------------------------------------------------------------------//
 const hwangFindTheWinner1 = function (n, k) {
   const queue = new Array(n).fill(0).map((_, i) => i + 1);
@@ -72,5 +71,4 @@ const parkFindTheWinner = function (n, k) {
     queue.shift();
   }
   return queue[0];
-
 };
