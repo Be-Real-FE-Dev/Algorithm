@@ -13,3 +13,12 @@ const hwangIsPerfectSquare = function (num) {
 
   return false;
 };
+
+/**
+ * * Park ************************************************************************
+ * @param {number} num
+ * @return {boolean}
+ */
+const parkIsPerfectSquare = function (num) {
+  return Number.isInteger(Math.sqrt(num));
+};
