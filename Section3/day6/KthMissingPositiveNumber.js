@@ -1,3 +1,4 @@
+
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangFindKthPositive = function (arr, k) {
   let left = 0;
@@ -12,4 +13,18 @@ const hwangFindKthPositive = function (arr, k) {
   }
 
   return left + k;
+}
+// * wonoh -------------------------------------------------------
+
+const findKthPositive = function (arr, k) {
+  let i = 1;
+  while (true) {
+    if (!arr.includes(i)) {
+      k--;
+    }
+
+    if (k === 0) return i;
+
+    i += 1;
+  }
 };

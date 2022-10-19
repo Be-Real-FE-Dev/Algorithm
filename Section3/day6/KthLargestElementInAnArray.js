@@ -1,3 +1,4 @@
+
 // * doeun 1--------------------------------------------------------------------------------------------------------------------//
 const hwangFindKthLargest1 = function (nums, k) {
   nums.sort((a, b) => b - a);
@@ -42,3 +43,10 @@ const quickSelect = (nums, start, end, k) => {
   return quickSelect(nums, start, pivot - 1, k);
 };
 // * doeun end--------------------------------------------------------------------------------------------------------------------//
+
+// * wonoh -------------------------------------------------------
+
+const choiFindKthLargest = function (nums, k) {
+  return nums.sort((a, b) => b - a)[k - 1];
+};
+
