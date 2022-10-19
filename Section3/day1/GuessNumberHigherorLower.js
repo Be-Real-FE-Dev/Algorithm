@@ -28,3 +28,18 @@ const parkGuessNumber = function (n) {
 
   return findPick(0, n);
 };
+
+// * wonoh -------------------------------------------------------
+
+const choiGuessNumber = function (n) {
+  let min = 0;
+  let max = n;
+
+  while (min <= max) {
+    const mid = Math.floor((min + max) / 2);
+
+    if (guess(mid) === 0) return mid;
+    if (guess(mid) === -1) max = mid - 1;
+    else min = mid + 1;
+  }
+};
