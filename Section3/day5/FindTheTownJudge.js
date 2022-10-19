@@ -37,3 +37,23 @@ const hwangFindJudge1 = function (n, trust) {
   return -1;
 };
 // * doeun end--------------------------------------------------------------------------------------------------------------------//
+
+/**
+ * * Park ***************************************************************************
+ * @param {number} n
+ * @param {number[][]} trust
+ * @return {number}
+ */
+var parkFindJudge = function (n, trust) {
+  const citizen = Array(n).fill(0);
+
+  for (let i = 0; i < trust.length; i++) {
+    citizen[trust[i][0] - 1] -= 1;
+    citizen[trust[i][1] - 1] += 1;
+  }
+
+  for (let i = 0; i < citizen.length; i++) {
+    if (citizen[i] === n - 1) return i + 1;
+  }
+  return -1;
+};
