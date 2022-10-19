@@ -4,13 +4,13 @@
  * @param {number} k
  * @return {number[]}
  */
- const parkTopKFrequent = function (nums, k) {
+const parkTopKFrequent = function (nums, k) {
   const result = [];
   const map = new Map();
 
   nums.forEach(n => map.set(n, map.get(n) + 1 || 1));
 
-  const sortedArray = [...map.values()].sort((a, b) => b[1] - a[1]);
+  const sortedArray = [...map.entries()].sort((a, b) => b[1] - a[1]);
 
   for (let i = 0; i < k; i++) {
     result.push(sortedArray[i][0]);
@@ -32,7 +32,7 @@ const hwangTopKFrequent = function (nums, k) {
   const result = [...map].sort((a, b) => b[1] - a[1]).map(([key, _]) => key);
 
   return result.filter((_, i) => i < k);
-}
+};
 
 // * wonoh -------------------------------------------------------
 const topKFrequent = function (nums, k) {
