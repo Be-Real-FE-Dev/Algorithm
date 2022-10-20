@@ -1,3 +1,5 @@
+// * wonoh -------------------------------------------------------
+
 const choiTwoSum = function (numbers, target) {
   let start = 0;
   let end = numbers.length - 1;
