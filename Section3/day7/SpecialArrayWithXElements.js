@@ -8,20 +8,24 @@ const parkSpecialArray = function (nums) {
   let right = nums.length;
 
   while (left <= right) {
-    const mid = left + Math.floor((right - left) / 2);
+    const mid = Math.floor((left + right) / 2);
 
     let count = 0;
-    for (let i = 0; i <= nums.length; i++) {
-      if (i >= mid) {
+
+    for (let i = 0; i < nums.length; i++) {
+      if (nums[i] >= mid) {
         count += 1;
       }
+      console.log(nums[i], mid, count, nums);
     }
 
     if (mid === count) return mid;
 
     if (mid < count) left = mid + 1;
     else if (mid > count) right = mid - 1;
-}
+  }
+  return -1;
+};
 
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangSpecialArray = function (nums) {
@@ -54,4 +58,3 @@ const choiSpecialArray = function (nums) {
 
   return -1;
 };
-
