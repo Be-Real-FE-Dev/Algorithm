@@ -52,3 +52,26 @@ const hwangCountNegatives = function (grid) {
 
   return result;
 };
+
+
+// * wonoh -------------------------------------------------------
+
+const choiCountNegatives = function(grid) {
+  const newGrid = grid.flat().sort((a,b) => a - b);
+
+  let start = 0;
+  let end = newGrid.length - 1;
+  
+  if (newGrid.length === 1 && newGrid[0] < 0) return 1;
+  
+  while(start <= end){
+      const mid = Math.floor((start+end)/2);
+      
+      if(newGrid[mid] >= 0) end = mid - 1;
+      else start = mid + 1;
+
+      if(newGrid[mid - 1] < 0 && newGrid[mid] >= 0) return mid;
+  }
+  
+  return 0;
+};
