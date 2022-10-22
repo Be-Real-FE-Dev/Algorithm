@@ -1,4 +1,3 @@
-
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangMySqrt = function (x) {
   let left = 0;
@@ -14,7 +13,7 @@ const hwangMySqrt = function (x) {
   }
 
   return left * left > x ? left - 1 : left;
-}
+};
 
 /**
  * * Park ********************************************************
@@ -35,4 +34,21 @@ const mySqrt = function (x) {
   }
 
   return right;
+};
+
+// * wonoh -------------------------------------------------------
+
+const choiMySqrt = function (x) {
+  let s = 1;
+  let e = Math.ceil(x / 2);
+
+  while (s <= e) {
+    const mid = Math.floor((s + e) / 2);
+
+    if (mid ** 2 === x) return mid;
+    if (mid ** 2 < x) s = mid + 1;
+    else e = mid - 1;
+  }
+
+  return e;
 };
