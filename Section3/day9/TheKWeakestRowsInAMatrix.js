@@ -1,3 +1,42 @@
+
+/**
+ * * Park ******************************************************
+ * @param {number[][]} mat
+ * @param {number} k
+ * @return {number[]}
+ */
+const parkKWeakestRows = function (mat, k) {
+  const map = new Map();
+
+  for (let i = 0; i < mat.length; i++) {
+    let left = 0;
+    let right = mat[i].length - 1;
+
+    if (mat[i][left] === 0) {
+      map.set(i, 0);
+      continue;
+    }
+    if (mat[i][right] === 1) {
+      map.set(i, mat[i].length);
+      continue;
+    }
+    console.log(i);
+    while (left <= right) {
+      const mid = Math.floor((left + right) / 2);
+
+      if (mat[i][mid] === 1 && mat[i][mid + 1] === 0) {
+        map.set(i, mid + 1);
+        break;
+      }
+      if (mat[i][mid] === 1) left = mid + 1;
+      else right = mid - 1;
+    }
+  }
+  return [...map]
+    .sort((a, b) => a[1] - b[1])
+    .slice(0, k)
+    .map(val => val[0]);
+}
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangkWeakestRows = function (mat, k) {
   const map = new Map();

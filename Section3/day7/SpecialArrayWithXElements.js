@@ -16,7 +16,6 @@ const parkSpecialArray = function (nums) {
       if (nums[i] >= mid) {
         count += 1;
       }
-      console.log(nums[i], mid, count, nums);
     }
 
     if (mid === count) return mid;
