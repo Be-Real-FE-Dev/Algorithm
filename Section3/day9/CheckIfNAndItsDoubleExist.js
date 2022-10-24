@@ -1,4 +1,3 @@
-
 /**
  * Park ************************************************************
  * @param {number[]} arr
@@ -26,7 +25,6 @@ const parkCheckIfExist = function (arr) {
   return false;
 };
 
-
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangCheckIfExist = function (arr) {
   arr.sort((a, b) => a - b);
@@ -48,5 +46,16 @@ const hwangCheckIfExist = function (arr) {
     if (arr[mid] === val && mid !== i) return true;
   }
 
+  return false;
+};
+
+// * wonoh -------------------------------------------------------
+
+const constCheckIfExist = function (arr) {
+  arr.sort((a, b) => a - b);
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr.includes(arr[i] * 2) && arr.indexOf(arr[i] * 2) !== i) return true;
+  }
   return false;
 };
