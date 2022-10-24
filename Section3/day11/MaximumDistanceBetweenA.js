@@ -1,3 +1,5 @@
+// * wonoh -------------------------------------------------------
+
 const choiMaxDistance = function (nums1, nums2) {
   let max = 0;
 
