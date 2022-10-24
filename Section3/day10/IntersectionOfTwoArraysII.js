@@ -26,7 +26,7 @@ const parkIntersect = function (nums1, nums2) {
     }
   }
   return result;
-}
+};
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangIntersect = function (nums1, nums2) {
   const res = [];
@@ -39,4 +39,21 @@ const hwangIntersect = function (nums1, nums2) {
   });
 
   return res;
+};
+
+// * wonoh -------------------------------------------------------
+
+const choiIntersect = function (nums1, nums2) {
+  const result = [];
+
+  nums1.forEach(num => {
+    const idx = nums2.indexOf(num);
+
+    if (idx > -1) {
+      result.push(num);
+      nums2.splice(idx, 1);
+    }
+  });
+
+  return result;
 };

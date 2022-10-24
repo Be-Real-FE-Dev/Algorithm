@@ -15,8 +15,8 @@ const parkJudgeSquareSum = function (c) {
     if (c > sum) left = c > mid ** 2 + right ** 2 ? mid + 1 : left + 1;
     else right = c < mid ** 2 + left ** 2 ? mid - 1 : right - 1;
   }
-  return false;  
-}
+  return false;
+};
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangJudgeSquareSum = function (c) {
   let left = 0;
@@ -27,6 +27,23 @@ const hwangJudgeSquareSum = function (c) {
     if (sum === c) return true;
     if (sum < c) left += 1;
     else right -= 1;
+  }
+
+  return false;
+};
+
+// * wonoh -------------------------------------------------------
+
+const choiJudgeSquareSum = function (c) {
+  let s = 0;
+  let e = Math.ceil(Math.sqrt(c));
+
+  while (s <= e) {
+    const result = s ** 2 + e ** 2;
+
+    if (result === c) return true;
+    if (result < c) s += 1;
+    else e -= 1;
   }
 
   return false;
