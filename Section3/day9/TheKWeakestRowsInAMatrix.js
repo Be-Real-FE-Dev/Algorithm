@@ -19,7 +19,6 @@ const parkKWeakestRows = function (mat, k) {
       map.set(i, mat[i].length);
       continue;
     }
-    console.log(i);
     while (left <= right) {
       const mid = Math.floor((left + right) / 2);
 

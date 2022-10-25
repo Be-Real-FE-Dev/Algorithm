@@ -1,4 +1,3 @@
-
 // * wonoh -------------------------------------------------------
 
 const choiMaxDistance = function (nums1, nums2) {
@@ -20,7 +19,7 @@ const choiMaxDistance = function (nums1, nums2) {
   }
 
   return max;
-
+};
 /**
  * * Park ******************************************************
  * @param {number[]} nums1
@@ -49,7 +48,7 @@ const parkMaxDistance = function (nums1, nums2) {
     }
   }
   return max;
-}
+};
 // * doeun --------------------------------------------------------------------------------------------------------------------//
 const hwangmaxDistance = function (nums1, nums2) {
   let i = 0;
@@ -65,5 +64,4 @@ const hwangmaxDistance = function (nums1, nums2) {
   }
 
   return dis;
-
 };
