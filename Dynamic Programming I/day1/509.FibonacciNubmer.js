@@ -1,3 +1,12 @@
+
+// dabin
+var fib = function(n) {
+    if(n <= 0) return 0;
+    else if(n === 1) return 1;
+    else return fib(n-1) + fib(n-2)
+};
+
+
 //* 정세훈 시작 ----------------------------------------------------------------------------------------------------------------------------------
 const jeongFib = function (n) {
   if (n <= 1) return n;
@@ -22,3 +31,4 @@ const park_fib = n => {
 };
 
 console.log(park_fib(10));
+
