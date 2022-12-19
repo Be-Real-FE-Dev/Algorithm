@@ -33,7 +33,7 @@ const park_fib = n => {
 console.log(park_fib(10));
 
 //* doeun ----------------------------------------------------------------------------------------------------------------------------------
-const fib = function(n) {
+const hwangfib = function(n) {
   const dp = [0, 1]
 
   for(let i = 2; i <= n; i++){
@@ -41,4 +41,11 @@ const fib = function(n) {
   }
 
   return dp[n]
+};
+
+//* wonoh
+const choiFib = function(n) {
+  if(n <= 1) return n;
+
+  return choiFib(n-1) + choiFib(n-2);
 };
