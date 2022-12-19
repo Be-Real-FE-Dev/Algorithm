@@ -33,7 +33,7 @@ const park_fib = n => {
 console.log(park_fib(10));
 
 //* doeun ----------------------------------------------------------------------------------------------------------------------------------
-const fib = function(n) {
+const hwangfib = function(n) {
   const dp = [0, 1]
 
   for(let i = 2; i <= n; i++){
