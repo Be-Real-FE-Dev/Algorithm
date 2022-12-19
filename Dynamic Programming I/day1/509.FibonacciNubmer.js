@@ -42,3 +42,10 @@ const hwangfib = function(n) {
 
   return dp[n]
 };
+
+//* wonoh
+const choiFib = function(n) {
+  if(n <= 1) return n;
+
+  return choiFib(n-1) + choiFib(n-2);
+};
