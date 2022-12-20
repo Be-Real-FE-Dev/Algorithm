@@ -1,3 +1,17 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+const park_rob = function (nums) {
+  let [cur, next] = [0, 0];
+
+  nums.forEach(num => {
+    [cur, next] = [next, Math.max(num + cur, next)];
+  });
+
+  return next;
+};
+
 //* doeun ----------------------------------------------------------------------------------------------------------------------------------
 const hwangrob = function(nums) {
   if(nums.length === 1) return nums[0];
@@ -13,6 +27,7 @@ const hwangrob = function(nums) {
   return dp[nums.length - 1];
  };
 
+<<<<<<< HEAD
  //* wonoh
 
  const choiRob = function(nums) {
@@ -25,3 +40,5 @@ const hwangrob = function(nums) {
 
   return dp[nums.length - 1];
 };
+=======
+>>>>>>> 0c7f143e42f9caffde04e46f303bb077c4cb7e2d
