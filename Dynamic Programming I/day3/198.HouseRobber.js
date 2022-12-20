@@ -27,7 +27,7 @@ const hwangrob = function(nums) {
   return dp[nums.length - 1];
  };
 
-<<<<<<< HEAD
+
  //* wonoh
 
  const choiRob = function(nums) {
@@ -37,8 +37,6 @@ const hwangrob = function(nums) {
       dp[i] = Math.max(dp[i-1], dp[i-2]+nums[i]);
       
   }
-
   return dp[nums.length - 1];
 };
-=======
->>>>>>> 0c7f143e42f9caffde04e46f303bb077c4cb7e2d
+
