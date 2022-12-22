@@ -1,16 +1,3 @@
-/**
- * @param {number[]} nums
- * @return {boolean}
- */
-const canJump = function (nums) {
-  let max = 0;
-  for (let i = 0; i < nums.length; i++) {
-    if (max < i) return false;
-    max = Math.max(max, i + nums[i]);
-    if (max >= nums.length - 1) return true;
-  }
-};
-
 //* doeun ----------------------------------------------------------------------------------------------------------------------------------
 const hwangjump = function (nums) {
   let count = 0;
