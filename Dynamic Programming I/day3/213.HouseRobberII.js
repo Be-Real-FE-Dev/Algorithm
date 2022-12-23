@@ -34,3 +34,22 @@ const hwangrob = function(nums) {
  
   return Math.max(dp1[nums.length - 1], dp2[nums.length - 1])
 };
+
+
+//* wonoh
+const helper = (nums) => {
+  dp = [nums[0], Math.max(nums[0], nums[1])];
+  
+  for (let i = 2; i < nums.length; i++){
+    dp[i] = Math.max(dp[i-1], dp[i-2]+nums[i]);
+  }
+  
+  return dp[nums.length - 1];
+}
+
+const choiRob = function(nums) {
+  if (nums.length === 0) return 0;
+  if (nums.length <= 2) return Math.max(...nums);
+
+ return Math.max(helper(nums.slice(0, nums.length-1)), helper(nums.slice(1)));
+};
