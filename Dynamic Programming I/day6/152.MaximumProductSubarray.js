@@ -15,3 +15,19 @@ const choiMaxProduct = function(nums) {
   
   return result;
 };
+
+//* doeun ----------------------------------------------------------------------------------------------------------------------------------
+const hwangmaxProduct = function(nums) {
+  let result = nums[0];
+  let min = 1;
+  let max = 1;
+
+  for(let i = 0; i < nums.length; i++){
+      let temp = min;
+      min = Math.min(min * nums[i], max * nums[i], nums[i]);
+      max = Math.max(temp * nums[i], max * nums[i], nums[i]);
+      result = Math.max(max, result);
+  }
+
+  return result;
+};
