@@ -23,3 +23,36 @@ const park_trap = function (height) {
 
   return waterVolume;
 };
+
+//* doeun ----------------------------------------------------------------------------------------------------------------------------------
+const  hwangwordBreak = function(s, wordDict) {
+  const len = wordDict.length;
+  const dp = [];
+  const map = {};
+
+  for(let i = 0; i < len; i++){
+      map[wordDict[i]] = true;
+  }
+
+  return hwangfind(s, map, dp, 0);
+};
+
+const hwangfind = (s, map, dp, index) => {
+  if(dp[index] !== undefined) return dp[index];
+  if(index === s.length) return true;
+
+  let str = ''
+  let res = false;
+
+  for(let i = index; i < s.length; i++){
+      str = s.substring(index, i + 1);
+      if(map[str] && hwangfind(s, map, dp, i + 1)){
+          res = true;
+          break;
+      }
+  }
+
+  dp[index] = res;
+  return res;
+}
+//* doeun end----------------------------------------------------------------------------------------------------------------------------------

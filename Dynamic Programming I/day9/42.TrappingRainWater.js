@@ -41,7 +41,7 @@ const park_wordBreak = (s, wordDict) => {
   return dp[s.length];
 };
 
-
+//* wonoh
 const choiTrap =  function(height) {
   let answer = 0;
   
@@ -60,4 +60,51 @@ const choiTrap =  function(height) {
       answer += Math.min(toLeft[i], toRight[i]) - height[i];
   
   return answer;
+
+}
+
+//* doeun 1 : Time Limit----------------------------------------------------------------------------------------------------------------------------------
+const hwangtrap1 = function(height) {
+  let startHeight= height[0];
+  let endHeight = height.slice(1).find(h => h >= startHeight);
+  let water = 0;
+
+  for(let i = 1; i < height.length; i++){
+      if(endHeight === undefined){
+          endHeight = Math.max(...height.slice(i), 0);
+      }
+
+      if(height[i] === endHeight){
+          startHeight = endHeight;
+          endHeight = height.slice(i + 1).find(h => h >= startHeight);
+          continue;
+      }
+
+      const standardHeight = endHeight > startHeight? startHeight : endHeight;
+
+      if(standardHeight - height[i] > 0) water += standardHeight - height[i];
+  }
+
+  return water
+};
+
+//* doeun 2 ----------------------------------------------------------------------------------------------------------------------------------
+const hwangtrap2 = function(height) {
+  const left = [];
+  const right = [];
+  left[0] = height[0];
+  right[height.length - 1] = height[height.length - 1];
+
+  for(let i = 1; i < height.length; i++){
+      left[i] = Math.max(height[i], left[i - 1]);
+      right[height.length - 1 - i] = Math.max(right[height.length - i], height[height.length - 1 - i]);
+  }
+
+  let water = 0;
+
+  for(let i = 0; i < height.length; i++){
+      water += Math.min(left[i], right[i]) - height[i];
+  }
+
+  return water;
 };
