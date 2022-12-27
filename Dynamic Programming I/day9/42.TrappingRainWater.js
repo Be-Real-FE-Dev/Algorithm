@@ -42,7 +42,7 @@ const park_wordBreak = (s, wordDict) => {
 };
 
 //* doeun 1 : Time Limit----------------------------------------------------------------------------------------------------------------------------------
-const hwangtrap = function(height) {
+const hwangtrap1 = function(height) {
   let startHeight= height[0];
   let endHeight = height.slice(1).find(h => h >= startHeight);
   let water = 0;
@@ -67,3 +67,22 @@ const hwangtrap = function(height) {
 };
 
 //* doeun 2 ----------------------------------------------------------------------------------------------------------------------------------
+const hwangtrap2 = function(height) {
+  const left = [];
+  const right = [];
+  left[0] = height[0];
+  right[height.length - 1] = height[height.length - 1];
+
+  for(let i = 1; i < height.length; i++){
+      left[i] = Math.max(height[i], left[i - 1]);
+      right[height.length - 1 - i] = Math.max(right[height.length - i], height[height.length - 1 - i]);
+  }
+
+  let water = 0;
+
+  for(let i = 0; i < height.length; i++){
+      water += Math.min(left[i], right[i]) - height[i];
+  }
+
+  return water;
+};
