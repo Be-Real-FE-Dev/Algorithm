@@ -40,3 +40,30 @@ const park_wordBreak = (s, wordDict) => {
 
   return dp[s.length];
 };
+
+//* doeun 1 : Time Limit----------------------------------------------------------------------------------------------------------------------------------
+const hwangtrap = function(height) {
+  let startHeight= height[0];
+  let endHeight = height.slice(1).find(h => h >= startHeight);
+  let water = 0;
+
+  for(let i = 1; i < height.length; i++){
+      if(endHeight === undefined){
+          endHeight = Math.max(...height.slice(i), 0);
+      }
+
+      if(height[i] === endHeight){
+          startHeight = endHeight;
+          endHeight = height.slice(i + 1).find(h => h >= startHeight);
+          continue;
+      }
+
+      const standardHeight = endHeight > startHeight? startHeight : endHeight;
+
+      if(standardHeight - height[i] > 0) water += standardHeight - height[i];
+  }
+
+  return water
+};
+
+//* doeun 2 ----------------------------------------------------------------------------------------------------------------------------------
