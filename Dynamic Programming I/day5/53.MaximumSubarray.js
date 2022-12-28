@@ -39,3 +39,12 @@ const choiMaxSubArray = function(nums) {
   return max;
 };
 
+// ? dbin
+const kimMaxSubArray = function(nums) {
+    for(let i = 1; i < nums.length; i++){
+        nums[i] = Math.max(nums[i], nums[i]+nums[i-1])
+    console.log(nums[i])
+    }   
+    
+    return Math.max(...nums)
+  }
