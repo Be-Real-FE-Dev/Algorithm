@@ -1,12 +1,12 @@
-//* wonoh
+// //* wonoh
 
 const choiNumberOfArithmeticSlices = function(nums) {
-  if(nums.length < 3) return 0;
+  if(numlength < 3) return 0;
 
 let ans = 0;
 let cnt = 0;
 
-for (let i = 2; i < nums.length; i++){
+for (let i = 2; i < numlength; i++){
     if(nums[i] - nums[i-1] === nums[i-1] - nums[i-2]){
         cnt += 1;
         ans += cnt;
@@ -15,3 +15,5 @@ for (let i = 2; i < nums.length; i++){
 
 return ans;
 };
+
+
