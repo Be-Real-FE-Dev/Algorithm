@@ -3,12 +3,15 @@ const input = require('fs')
   .toString()
   .split(' ')
   .map(Number);
-// let count = 0;
-// for (let i = input[0] + 1; i < input[1]; i++) {
-//   count += i;
-// }
-// console.log(count);
 
+// let arr = [];
+// for (let i = 0; i < 1000; i++) {
+//   for (let j = 0; j < i; j++) {
+//     arr.push(i);
+//   }
+//   if (arr.length >= input[i]) break;
+// }
+// console.log(arr.slice(input[0] - 1, input[1]).reduce((x, y) => x + y, 0));
 const solution = arr => {
   const save = [];
   for (let i = 1; i <= 1000; i++) {
