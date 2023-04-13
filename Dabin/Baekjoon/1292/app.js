@@ -1,8 +1,8 @@
-const input = require('fs')
-  .readFileSync(__dirname + '/input.txt')
-  .toString()
-  .split(' ')
-  .map(Number);
+// const input = require('fs')
+//   .readFileSync(__dirname + '/input.txt')
+//   .toString()
+//   .split(' ')
+//   .map(Number);
 
 // let arr = [];
 // for (let i = 0; i < 1000; i++) {
