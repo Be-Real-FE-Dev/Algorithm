@@ -5,11 +5,6 @@ const input = require('fs')
   .trim()
   .split('\n');
 
-// let result = 0;
-// for(let i=1; i<input[0]; i++){
-//   result = input[i].split(' ')
-//   console.log(+result[0] + +result[1])
-// }
 let result = '';
 for(let i=1; i <= +input[0]; i++){
   let data = input[i].split(' ')
